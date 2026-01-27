@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Burnout Radar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Digital Burnout Radar</h1>
+
+  <form id="checkinForm">
+    <label>Energy (1–5)</label>
+    <input type="number" min="1" max="5" id="energy" required>
+
+    <label>Stress (1–5)</label>
+    <input type="number" min="1" max="5" id="stress" required>
+
+    <label>Focus (1–5)</label>
+    <input type="number" min="1" max="5" id="focus" required>
+
+    <textarea id="note" placeholder="Optional note"></textarea>
+
+    <button type="submit">Save Check-In</button>
+  </form>
+  <section class="stats">
+  <h2>Your Recent State</h2>
+
+  <div class="stat-box">
+    <p>Average Energy</p>
+    <span id="avgEnergy">–</span>
+  </div>
+
+  <div class="stat-box">
+    <p>Average Stress</p>
+    <span id="avgStress">–</span>
+  </div>
+
+  <div class="stat-box">
+    <p>Average Focus</p>
+    <span id="avgFocus">–</span>
+  </div>
+
+  <p id="warningText" class="warning"></p>
+</section>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f1f1a;
+  color: #e8f5e9;
+  padding: 40px;
+}
+
+form {
+  max-width: 400px;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+.stats {
+  margin-top: 50px;
+  max-width: 400px;
+}
+
+.stat-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-box span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.warning {
+  margin-top: 20px;
+  color: #a5d6a7;
+  font-style: italic;
+}
