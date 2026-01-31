@@ -1,48 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Digital Burnout Radar</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Digital Burnout Radar</h1>
 
-  <form id="checkinForm">
-    <label>Energy (1–5)</label>
-    <input type="number" min="1" max="5" id="energy" required>
+  <!-- App Container -->
+  <div class="app-container">
 
-    <label>Stress (1–5)</label>
-    <input type="number" min="1" max="5" id="stress" required>
+    <!-- Header -->
+    <header class="app-header">
+      <h1>Digital Burnout Radar</h1>
+      <p>Track habits. Detect burnout. Reflect early.</p>
+    </header>
 
-    <label>Focus (1–5)</label>
-    <input type="number" min="1" max="5" id="focus" required>
+    <!-- Main Content -->
+    <main class="app-main">
 
-    <textarea id="note" placeholder="Optional note"></textarea>
+      <!-- Input Section -->
+      <section class="card">
+        <h2>Daily Check-in</h2>
 
-    <button type="submit">Save Check-In</button>
-  </form>
-  <section class="stats">
-  <h2>Your Recent State</h2>
+        <label>Screen Time (hours)</label>
+        <input type="number" placeholder="e.g. 7" />
 
-  <div class="stat-box">
-    <p>Average Energy</p>
-    <span id="avgEnergy">–</span>
+        <label>Breaks Taken</label>
+        <input type="number" placeholder="e.g. 3" />
+
+        <label>Mood (1 = Low, 5 = High)</label>
+        <input type="number" min="1" max="5" placeholder="e.g. 4" />
+
+        <label>Reflection</label>
+        <textarea placeholder="How did today feel?"></textarea>
+
+        <button>Add Entry</button>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="card">
+        <h2>Burnout Status</h2>
+
+        <div class="stat">
+          <span>Burnout Score</span>
+          <strong>—</strong>
+        </div>
+
+        <div class="stat">
+          <span>Status</span>
+          <strong>—</strong>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Designed for awareness, not pressure.</p>
+    </footer>
+
   </div>
 
-  <div class="stat-box">
-    <p>Average Stress</p>
-    <span id="avgStress">–</span>
-  </div>
-
-  <div class="stat-box">
-    <p>Average Focus</p>
-    <span id="avgFocus">–</span>
-  </div>
-
-  <p id="warningText" class="warning"></p>
-</section>
-
-
-  <script src="app.js"></script>
 </body>
 </html>

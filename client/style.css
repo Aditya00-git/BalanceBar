@@ -1,38 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #0f1f1a;
-  color: #e8f5e9;
-  padding: 40px;
+  background: #f5f6f7;
+  color: #222;
+  min-height: 100vh;
 }
 
-form {
-  max-width: 400px;
+/* App Layout */
+.app-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-input, textarea, button {
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.app-header p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Main Content */
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Inputs */
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input,
+textarea {
   width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-}
-.stats {
-  margin-top: 50px;
-  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
-.stat-box {
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #111;
+}
+
+/* Stats */
+.stat {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 15px;
+  font-size: 15px;
 }
 
-.stat-box span {
-  font-size: 18px;
-  font-weight: bold;
+/* Footer */
+.app-footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 13px;
+  color: #777;
 }
 
-.warning {
-  margin-top: 20px;
-  color: #a5d6a7;
-  font-style: italic;
+/* Responsive */
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
 }

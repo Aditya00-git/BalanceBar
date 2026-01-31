@@ -31,5 +31,37 @@ async function loadStats() {
     warningText.textContent = "Your recent patterns look stable.";
   }
 }
+async function loadReflections() {
+  const res = await fetch("/api/reflections");
+  const data = await res.json();
+
+  const div = document.getElementById("reflectionList");
+  div.innerHTML = "";
+
+  data.reverse().forEach(r => {
+    const p = document.createElement("p");
+    p.textContent = `${new Date(r.date).toDateString()} — ${r.text}`;
+    div.appendChild(p);
+  });
+}
+
+async function saveReflection() {
+  const text = document.getElementById("reflectionText").value;
+
+  const res = await fetch("/api/reflections", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text })
+  });
+
+  if (res.ok) {
+    document.getElementById("reflectionText").value = "";
+    loadReflections();
+  } else {
+    alert("Reflection too short");
+  }
+}
 
 loadStats();
+loadReflections();
+

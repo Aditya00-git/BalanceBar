@@ -3,18 +3,30 @@ const fs = require("fs");
 const path = require("path");
 
 const router = express.Router();
-const dataPath = path.join(__dirname, "../data/entries.json");
+const filePath = path.join(__dirname, "../data/reflections.json");
 
+// Get all reflections
+router.get("/", (req, res) => {
+  const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  res.json(data.reflections);
+});
+
+// Add a reflection
 router.post("/", (req, res) => {
   const { text } = req.body;
 
-  const data = JSON.parse(fs.readFileSync(dataPath));
+  if (!text || text.trim().length < 10) {
+    return res.status(400).json({ error: "Reflection too short" });
+  }
+
+  const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
   data.reflections.push({
-    date: new Date().toISOString(),
-    text
+    text,
+    date: new Date().toISOString()
   });
 
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   res.json({ message: "Reflection saved" });
 });
 

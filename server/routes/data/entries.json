@@ -1,3 +1,10 @@
 {
-  "checkins": []
+  "checkins": [
+    {
+      "date": "2026-01-31T10:55:08.211Z",
+      "energy": "3",
+      "stress": "2",
+      "note": ""
+    }
+  ]
 }
